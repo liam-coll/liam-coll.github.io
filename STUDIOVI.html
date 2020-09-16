@@ -147,6 +147,53 @@
 					I also had a critique session last week, where I basically showcased all the progress I’ve discussed here. Feedback was generally good, although I felt I struggled to communicate my ideas very well.
 					<br>
 					I had answers for every question asked of me, which means I’ve comprehensively thought things through, which certainly hasn’t been the case for critiques I’ve done in the past.
+				</p>
+				<br>
+				<h1>
+				  <p>16/9/2020</p>
+			    </h1>
+				<p>
+					A large recap unfortunately. I’ve been working really hard on almost exclusively studio, which means I’ve managed to get a lot done. A week after my last post Auckland was brought down to a lower COVID alert level and I was able to access studio.
+					<br>
+					I headed in and cleared absolutely everything off my desk, and also managed to consult Krishna, our mechatronics lab technician about connecting wires reliably to the GPIO pins, who recommended just buying some premade wires from Jaycar (my previous plan was to build and crimp my own).
+					<br>
+					I swung by Jaycar on the way home and grabbed the required materials, and finally set up my Raspberry Pi workstation using stuff from around the house.
+					<br>
+					I began by setting up some buttons on a breadboard and getting basic inputs working on a python script, which was really easy to do.
+					<br>
+					<img src="images/STUDIOVI/pibuttons.jpg">
+					<br>
+					Over the next few days I worked on the python script, with the goal of getting all of the code done by the end of mid-semester break so I can spend the last 5-6 weeks working on hardware and collecting media, as well as framing the project as a whole (what am I trying to say etc.).
+					<br>
+					The python script was mostly working after about a week. From now on I’ll put techno-babble in red for readabilities sake.
+					<br>
+					<br>
+					<p style="color:red;">
+					I created a few short clips to test with, and created two channel folders. The script loads the file names into a list, and then uses FFMPEG to find the durations of the clips (this is slow).
+					Pressing the up/down buttons changes the channel variables and runs a play-clip function, which plays the first clip, waits for the duration of the clip, then onto the next one in the list, rinse and repeat. The channel could be changed at any time. Development was a pain, as when videos played, I wasn’t always able to exit the player window, and had to wait until the end of the clips (despite building and coding a kill-switch). This resulted in me getting to know my clips inside out, and playing lost of Minesweeper on my phone.
+					</p>
+					<br>
+					While the python script mostly worked, it was pretty slow and the buttons didn’t always work <p style="color:red;"> (probably due to the waitforduration function)</p>.
+					<br>
+					This was a problem, so I looked for a solution online. As I searched, I stumbled upon a RPi application called PiPresents. PiPresents allows for the creation of multimedia shows on a Raspberry Pi, intended for creating museum exhibits.
+					<br>
+					I set up PiPresents and found it really easy to use once I got the hang of it.
+					<br>
+					<br>
+					<p style="color:red;">
+					PiPresents comes with a server-based web editor/manager, so I was able to work on the PiPresents ‘profile’ from my Chromebook/phone/whatever I wanted. This helped immensely, as the Pi is very slow when running larger applications like the web browser. It was really cool having remote control, and could come in useful once the project is installed.
+					<br>
+					<img src="images/STUDIOVI/multidevice.jpg">
+					</p>
+					<br>
+					After two days of tinkering with PiPresents, I had it to my liking. Adding videos is really easy, it’s a lot faster and my buttons work consistently. The only slight hitch is that I can only change channels in one direction, but seeing as there’s only 3 channels its not too much of an issue, once you go over 3 it goes back to 1 anyway.
+					<br>
+					I could put more time into making it work but unfortunately its time I don’t really have at the moment. I may come back to it later but its not a high priority currently.
+					<br>
+					<br>
+					With the tech working to my liking (ahead of schedule as well) , I’m ready to move onto the next section of the project: hardware and media.
+					<br>
+					This will be easier to do once I’m back on city campus so I’ll take the next few days to work on other projects as well as resting up for what will hopefully be an energetic and successful final half-semester.
 
 				</p>
 <!-- 				<h1 >
