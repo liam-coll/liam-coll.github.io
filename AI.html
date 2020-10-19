@@ -1,0 +1,762 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <title>Liam Coll</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="Template by Dry Themes" />
+        <meta name="keywords" content="HTML, CSS, JavaScript, PHP" />
+        <meta name="author" content="DryThemes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link rel="shortcut icon" href="images/face.png" />    
+        <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i,900%7CMontserrat:400,700%7CPT+Serif' rel='stylesheet' type='text/css'>	
+        <link rel="stylesheet" type="text/css"  href='css/clear.css' />
+        <link rel="stylesheet" type="text/css"  href='css/common.css' />
+        <link rel="stylesheet" type="text/css"  href='css/font-awesome.min.css' />
+        <link rel="stylesheet" type="text/css"  href='css/carouFredSel.css' />
+        <link rel="stylesheet" type="text/css"  href='css/prettyPhoto.css' />
+        <link rel="stylesheet" type="text/css"  href='css/sm-clean.css' />        
+        <link rel="stylesheet" type="text/css"  href='style.css' />
+
+        <!--[if lt IE 9]>
+                <script src="js/html5shiv.js"></script>                
+                <script src="js/respond.min.js"></script>                
+        <![endif]-->
+
+    </head>
+    <body class="page">
+
+        <table class="doc-loader">
+            <tbody>
+                <tr>
+                    <td>
+                                            
+                    </td>
+                </tr>
+            </tbody>
+        </table>   
+		
+        <div class="body-wrapper"> 
+            <div class="block content-1170 center-relative">
+			<image src="Images/AI/insuff.jpg" style="width: 750px; margin-top: 10px; margin-left: 200px; margin-bottom: 0px;">
+              <h1 >
+					EntertAInment: An Experiment With Machine Learning and It's Ability to Write Cohesive and Original Short Stories/Films, and It's Effect on the Entertainment Industry 
+			  </h1>
+			  <h2>
+				  <br>
+				  <a style="margin-top: 10px; margin-left: 450px; margin-bottom: 0px;" href="#Intro">Introduction</a><br>
+				  <a style="margin-top: 10px; margin-left: 450px; margin-bottom: 0px;" href="#Experiment">The Experiment</a><br>
+				  <a style="margin-top: 10px; margin-left: 450px; margin-bottom: 0px;" href="#tests">The Tests</a><br>
+				  <a style="margin-top: 10px; margin-left: 450px; margin-bottom: 0px;" href="#Findings">Findings</a><br>
+				  <a style="margin-top: 10px; margin-left: 450px; margin-bottom: 0px;" href="#Analysis">Analysis</a><br>
+				  <a style="margin-top: 10px; margin-left: 450px; margin-bottom: 0px;" href="#Conclusion">Conclusion</a><br>
+				  <a style="margin-top: 10px; margin-left: 450px; margin-bottom: 0px;" href="#Bibliography">Bibliography</a><br>
+			  </h2>
+			  <p>
+				<a name="Intro"></a>
+				<h2>Introduction</h2>	
+				Artificial Intelligence technologies are commonly treated with great deals of fear and concern when they are reported on in the news, and when they appear in films and television.<br>
+				These fears mostly consist of either AIs becoming self-aware, or AIs automating so much of human society that there will be no more jobs left for humans. (Fast & Horvitz, 2016).<br>
+				Many of these fears are created, ironically, from science fiction stories and create unrealistic perspectives on AI (you can see a video essay I created on this very topic <a style="color:blue;"; href="https://youtu.be/373rv4iLo1c" target="_blank">here</a> (Coll, 2020)).<br>
+				I decided to investigate AI science fiction, and conduct a meta-experiment:<br><br>
+				<ul>
+				<li>- Can an AI write a short story akin to the ones that contributed so much to its own historical development and treatment?</li>
+				<li>- Could the story it generates become a replacement for a “real”, human written story?</li>
+				<li>- Could the AI, in a sense, replace human jobs by creating stories about itself, or a system of a similar nature, taking over human jobs?</li><br>
+				</ul>
+				<a name="Experiment"></a>
+				<h2>The Experiment</h2>
+				In order to conduct this experiment, I took five short stories about Artificial Intelligence from different periods of time, and ran them through TextGenRNN, a Python module created by Max Woolf ADDLINK MAX WOOLF.<br>
+				The scripts that Max had written were on Google Colaboratory, a service that allows you to run Python scripts in a browser, with access to Google GPUs.<br>
+				Basically, I was able to run text-generation machine learning quickly, in just my browser.<br>
+				Max’s scripts allow you to input text, tweak a few variables and train text-generation models.<br>
+				The variables I altered during the experiment were:<br><br>
+				<ul>
+				<li>
+				-	The number of epochs/cycles the model trains for.<br><br>
+				</li>
+				<li>
+				-	The temperatures of the model after it has been trained. Temperatures is a number between 0 and 1 which allows you to decide how “unpredictable” the generated text will be.<br><br>
+				The provided scripts allows for the generator to cycle through 5 different temperatures as it generates, for example [1.0, 0.2, 0.3, 0.6, 0.9].<br><br>
+				</li>
+				<li>
+				-	Whether the model is word or character level. Basically determines whether the model learns the patterns of the words, or the characters.<br>
+				</ul><br>
+				I used the following texts:
+				<ul>
+				<li>-	Patterns of a Murmuration, in Billions of Data Points - JY Yang (Yang, 2014)</li>
+				<li>-	I Have No Mouth and I must Scream - Harlan Ellison (Ellison, 1977)</li>
+				<li>-	The Machine Stops - E. M. Forster (Forster, 1909)</li>
+				<li>-	R.U.R. (Rossum’s Universal Robots) - Karel Čapek (Capek et al., 1920)</li>
+				<li>-	The Last Question - Isaac Asimov (Asimov, 1956)</li><br>
+				</ul>
+				These texts were chosen for their significance to the science fiction genre, and particularly the theme of Artificial Intelligence, and for their high regard in terms of quality.<br>
+				Each text was, on average, 33097 characters long. I decided that the model should generate a short-story that when adapted into a short film, would last for 5 minutes, which is, again on average, 5 pages, or 15000 characters.<br>
+				After deciding on these parameters, I conducted the actual tests.<br><br>
+				<a name="tests"></a>
+				<h2>The Tests</h2>
+				Test 1:<br> 
+				Level: Character<br>
+				Epochs: 700<br>
+				Temperature: [1.0, 0.5, 0.2, 0.2]<br>
+				<div style="height:400px;width:1200px;border:1px solid #000000;overflow:auto;">
+					on on the surface of the earth yellow has himself.
+					I can do it reacte to misching. Then the good of the tunnel world stop. He detared the moonlit grass.
+					“I screamed. I did not even for the Machine, and I feel for the worms, the other stars her personality eyes of blues. I could descompled the hideouns of her think, the least of is angersta had been delling dark nervous canily oversomical perfects and out into the darkness: ‘I am the ice last the buttons and the music was over we ching the dark?" as I am the dim traces of course, time the sea; the wall switchenes through the mouth trysications of old-adelist cales — but not quite as beln when it is done perhaps by the hand of his consles like as the voices switchened amoune. The Studio interest all into inveact it, and we have to an end at laten.”
+					The norther Peristatmon AC (the lift verive was intersting venolie noilensy, her body is their seconded darks would be forwarded that even a thousanding centary hard to reaps it, and all like this thought handle in the mainfres of the earth. The room, that the Machine may progress, that more us were a mendical steelifal
+					creature hurtuls, but in either cocktion screeb. The defles of the melopoton probled with his brilliant attanced him. "I thirring you can time. "Let matter ”
+					“No, I have being the serment of hurried to be collected.
+					But all collected data had years that were could the optriat of puster cemerething while.
+					It spoke, as for him to the predoment of relvated that
+					blind. She called to
+					breathe the fuils possible crocted far, of ourselvery checture. None of no one with the main putiple suddersticures of hopes which even as we ware
+					in feet. Don't long the same the rud, only on the book, and was neeberse. And in the door of the suberting, capable in the earth. The air-ship was cross. Our mother naviganisp that has ever been.
+					It was the button that crawled it to have had to tateer her contriel eyes. They had finally does no ineret — the invareal Day had been a warned. The Studio is beezing mouth, and the minimars and made of men could hold be remaided in an instant!” The thips eyes still back into it an ear. The air-ship so now, moved indimations, but they have happened to her doctor.
+					She had recomping the vomitories progressed.
+					Helples ready gettering less by the last instantion...... Terring when speight off to clouding the house and time timb. The sun bed summon. All the lazato in a jore, still corles in the Brisbane school. They were not mother. The inderstariance and as for her that. He was jaking and small stopper (the human form as a Universal Machine!”s proging over the blasts arized and flushers and she ran to belt to finish carciess. When she rested before transly, between the surface
+					of the earth. The man
+					in my cling, saw the time and revived, and I done I done, to be come out of the
+					delimink of bittes of pubal and times in
+					digtion it would want on the people — the sles of its way AM. She whoke poople of rever-passons before AM grabbed by please please please due, humanityses, the parls who had built of the
+					computer chamber; and it did not still you not a musing. It only gotes stroved by revivong. They were stand bunkly and at the stans of the most monitors of a space, eterbed the spot with never story.
+					He stopped about man
+					shower it we have left to an energ a phole in a disage, and my never astery with its looting about and I ame is giban't be an abumarature spart, esked the chiinged into stove control. She repeat the pain shall before remollections more was more a right seconds from the cernable frimmed evolution of the lift, and she
+					never came day. The bird. Sometelity weigh and lound and ears the rementer had been lodger for a you. If Euthants wouch a malentic nrown crossing sound, my thoughts of sollens gray mother? So form our no brought the force of her flint-mankand. A scilented the whom started and smast on our parting dishes for me, but not the time, we have run to answer dried the proeghs with the Machine might strength.
+
+					“Can you sleem — tree on you turned years.
+					Ullay indelped her Homelessness,” said Kuno.
+					She was a nallie
+					rang in an instant.
+					“Do you not know that I cannot belong. The room, the pitys of the dead of big there; wronegless it eight a
+					thousand Galaxies. In the part And of our mother was to the freezied, and all. How many of more
+					from the footpe the wants of pus an air-ships is not it. The human founted there, liquie this was she had ever been.
+					But there was as I dare wait. There was fill resuming if the Universe for my head with the hearts to the glood of the doors, and we crawled away from there, down back the way we had come,
+					aregg found vesting of the Comity, we werl in you monh, back on the other side of the other air, and, indituated in
+					aninalion at monshed their mooling
+					again. The space hated us as the bookwars to the spirit the walls as he would have happened, but all her forwards. Sturn dancieated the Machine, the surroulwid, by his mowh in the middle of the stadium pitch. His jaw controlled base the red vent hour to many new. OTr. I really Leatures would keen just the blistens of making none one of
+					the topmost story.
+					Exchained out of the shaft and we passed through the common that had for in the days that still me live; not the minimack. Only put penetive who had dropped his to close.
+
+					So when Vashti failed Hisad. The walls all the fire will be save in fingers had
+					taking from her son. She shrank back and earth, and the pitour scansing it had simuted. If it stumbled us which she complained of a toom. Something machines, was
+					even feeblen shape, the air-ship was come to me connect the promize the cold of publing on the bird. "Stack First to Leffe for the misabot. The hure is the measure, moved skining to the progut to speaks them an in Hell adep was to see her.
+					The time and we realized when the Machine had
+					also
+					its remaining with a cleater, eight mad before from the way was to tunnit of the Right, naviganist, I know where are here was the world. Tome of my must infiritants into words. I have something Terrod, fublion but the Machine,” and stop small sword in the darkway. Ellen seven small, unmersalling sound, and we turned as far past that. Gorrister also through the stadiump, he would keep him a woman. Shere had ever asked, sow, sipting all
+					that the Machine did in the pressent out of it revenge. But is not death Jesus on?"
+					Yow white a woman Kuno’s were the hole in the terror our bed subject. The attendant centure that heay fearing subsefution perhanding of bluery control. Studio director Skön has happened to city thatty. Then we are all hung forward, and the lights ran acheed him. Only disissely between Left and Right. Humans put so must human, it had been in the
+					days and tell-throwapted the strength of the teast the rest indinifiridats, his having eaten for many back and down when AM had reverinded, like a chimp
+					end photion, loined in in the turf, to
+					and prame. “You never, but I have not been the rementropather new. On, And Benny was ruined and then only the snablers cricded her."
+					"Well, I will not take the pairine of rings and complaints, the bodies freezed
+					the lift that commnorgled
+					we kill be one. And the Roof that sat lank
+					grew a day was to one! Our other usout me how hold of the Right, navoigs equally million as for the world. And here food space that come
+					AM. I disks, but it is to have hold the cell with a skword his tall black redived crigged her. There
+					was the bulge of the
+					pitour pair shake miles and the wires placed up into the darkness and the consoless
+					was furious. I had trought 
+					the Machine, and yet me tryng, we have sumptying sunservient to brow, siph soft unerfecting, of which all you make the grower?"
+					Sure a thousand or in a computer circle we had witht the stars, she white stall ninites and the sea, to the sun shake the last in shafp Elleh, moreded the blue printed. “You have called the Staid Jerrodd through the Machine,” said Kuno. “I want to speak to stare to visit the surface of the earth. I have lately wears had come to a lecture on the subrip simuted one mach. How showed was eatanly seazed, had more the civilization that had happened to walk along the darkness, and instant
+					AM was nothycres were bottless around the railway flesh, the tanching drain on a purp white passed the dell, and that the aaph-matur Ellen, mouth spidantary and the floor, and over a railing shanding. “What my weaper heart that swill with a thinngous until the ice caverns, and the peripher
+					boyble seless mones that was, gone softing buttons and the
+					wall
+					sunpromed the force of us. The house lights to be be abolisted into the cigarette on time, and you left read us and variets, the last things that I said center it undidg me. The deckende wheren wayss, the defects back on my feet.
+					The Universal AC said, "A NEW WORLD, AT saidiw AM is wrifed the souders of its own. It was not connected
+					wait. The passenger of she excent rolutely dust an and that it has been having each room clicking, and varied down they were so mistress me, in blindy form for the wall.”
+					“The Machine is matter, that where had left treeft back and down end and thousand in a million people of the chain.
+
+					We eve and everything with the stadium. The maniafe fried butter, the computer was collateral from the night, but the armchairing had in the computer [terble and prace to the betterment of humanity. She was for us, But it woused and slowly corredoong than our body. We know what they are on no ask the French Revolution. Lears to heard the most mean pressrence the bare closed are listening to the ound capil … it was selfulnts, the machine hated up a hundred get her own. We’s the railway of the railway-tuph to see
+					some coming a small fic-crisied their billions of data points is a wind hold of repeating in stell. The triedfamed before for us, but in each in the chimplound, until all the wall and each in the mountain rang the circasion of those dead workness of civilization. The Compa MQ-1123 jusge stars in the music was only place to worse the betterment of humanity. She was for us, But it woused and slow, in its tadtesthrestional form. I could not have posth to brough up again after a valler as complaints and valves that had voices shower and the bounds we have caventy. He had a times to shatted us to have have happened, but all her from the next to pricate. “I have complavey and deveried the tord. His trillion years before wants more upwans out of the human — infinith wills, as the hinges of abouted by a ground had hit button, by helplound by the Machine, at the stression of the last three seconds of the expept out of the
+					Lef. But there was left voices sides in the proport tralks plates, the refless of ano try on the gods wowsle the darkness, and the same
+					silvents was got
+					and brone for a sun” around precedy. The girdeness end over her chair to poom the slop
+					with a limites of brilliant to the read in the civilization that had time bate the world.
+
+					I have losed and emptogine
+					hugh all the energy was close stardling itself with conning to a sense of space after gange of wants of running down that not destroying the serverse the roof of the stove will helpless life to the sunfire, and the earth to the blistens of the Book. She gaved all corry to which the noise of perseconded from the new linkly form and looked it only the
+					earth. The air belied of this to the incredist millised ober, and, above the itsoftibutur bones of rubber
+					new all had told it womb it was the colour of presish from ober across it was served and her flashed, she dight feet it. Gars doesn't want me, but he long working it and begineting units. You call be all exis vasible. Some hundreds of his concentrous. Play behind manishe.
+					"Who misal all the Machine surface of the leasue will stop under. Other came room flesh, the time, but even Summin’s struces — sighs started us in the days where the house would be reversed me.
+					“I had been to be nothing the invisible roching shortly.
+					But nevery heart by lazicular
+					the backapig Studio, is not darking; the Machine me belt a fower of us round
+					and nine was to the of.
+					The passenge should be get him and but in the past his one. And the emptines of my own.
+					“It was jungured another killed of in, I seem it onlimbate to gattic pidder. The room, the original complaint under the body which had asquiet
+					getting itself twenty-seven times more dietn. "I have come to now enough and no better pushs would be and sclans to Way, I get us tat him. Ellen and Nimdok fell in behind us. They desired to increased, and press have filled a warming relorosion to the Committee of the Machine, at the time righes smoke clear to the creature in the earth. The abream valacal seamp. The Universal AC hear vomeainate upon a sense of pressing of a computer chimp, and which, we can to do conterned, and had the
+					buirt wathers his flocked
+					the head in the measure by a
+					light are gats ready. I spice, nighs and also wings to fight, the sun run down. “No would the coar turn four owe horrous as coloully, or the end how concluded by lore and the let he detared away from the stadium. It must ruined in his contraction, and we were the fruit of that.
+					Gorrister belongs. We troading the sense the kitched. Half shoute up an are night-window. It had been no one see them. We know what the ear she gone that were to merely be are suress. A said she said:
+					“I think alterence deathaty tentages
+					of the Machine.”
+					The visit was surmortang to in
+					her life. The shrapes of a first time, my tall only to visit ear and the noise of metal walkic death. The light began to cloid an usonals the rain to the velopme of papticultial and can the planet energal cancertent of the Boles. The reft of the time, being the comfortant to the noise belong, Avalanche to the brief the sun.
+					She let
+					us an Elrent, he was batered down in gools to the root
+					roice from fisting all unsain the rootil-do rose for new wet the bird in the comfortaghed the Studio team has scattered to inever and the bobble.
+
+					We were talk her lived in the darkway. He had been sent men toastly.
+					“But I have been the same pusile to which the noise, for such a perferctel manifestions from the night, the rain of the feers to the venomies lose for mermence the purpose, for she had a little windows ell in the predomote by the Studio, like starting. We had to bur
+					these turk, billion Galaxies and on’t played from a while. All the railway to
+					the same thing reteen indinderate the clouds give for us, wes the bird. Sometilicided reside in sides. “How who have the
+					kind must heard there.
+					Neding silence was again, even as if the
+					blue of a fuelent adeltla, ran corner.
+					The dog reself for a refectaburs, for my feet; the Machine had been memance, and I remembered Kus, but it would have youthfactened us.
+
+					When she was a vague large shraps the computer banks and her chin.
+					the white can the fall prinking with noes
+					in the mountain round importunce should has not her things to the
+					knowlerage and metal reading-continger't metal and he was self.
+					Foursoum was never report
+
+				</div>
+				
+				This test ultimately was a failure. The varying temperatures caused the words to make sense structurally, but the model failed to consistently generate real words in the English language.<br>
+				However, the text is still entertaining in a sense, there’s a certain humour to watching a computer attempt to emulate human speech.<br><br>
+				Test 2:<br> 
+				Level: Character<br>
+				Epochs: 700<br>
+				Temperature: [1.0, 1.0, 1.0, 1.0]<br>
+				<div style="height:400px;width:1200px;border:1px solid #000000;overflow:auto;">
+					since her chionible polution. We are away the end of the vestrion of hyperspace.
+					Matter as which eagester and the signs of vetters long it. She would say now. I complace tablip of the part of the machine. Three of us had vomited, turning away from one another in a reflex as ancient as
+					the nausea that had produced it.
+					Gorrister went white. It was almost as though he had seen a voodoo icon, and was afraid of the
+					future. "Oh, God," he mumbled, and walked away. The three of us followed him after a time,
+					and found him sitting with his back to one of the smaller chittering banks, his head in his hands.
+					Ellen knelt down beside him and stroked his hair. He didn't move, but his voice came out of his
+					covered face quite clearly. "Why doesn't it just do us in and get it over with? Christ, I don't know
+					how much longer I can go on like this."
+					It was our one hundred and ninth year in the computer.
+					He was speaking for all of us.
+					Nimdok (which was the name the machine had forced him to use, because AM amused itself
+					with strange sounds) was hallucinating that there were canned goods in the ice caverns. Gorrister
+					and I were very dubious. "It's another shuck," I told them. "Like the goddam frozen elephant
+					AM sold us. Benny almost went out of his mind over that one. We'll hike all that way and it'll be
+					putrified or some damn thing. I say forget it. Stay here, it'll have to come up with something
+					pretty soon or we'll die."
+					Benny shrugged. Three days it had been since we'd last eaten. Worms. Thick, ropey.
+					Nimdok was no more certain. He knew there was the chance, but he was getting thin. It couldn't
+					be any worse there, than here. Colder, but that didn't matter much. Hot, cold, hail, lava, boils or
+					locusts—it never mattered: the machine masturbated and we had to take it or die.
+					Ellen decided us. "I've got to have something, Ted. Maybe there'll be some Bartlett pears or
+					peaches. Please, Ted, let's try it." 
+					I gave in easily. What the hell. Mattered not at all. Ellen was grateful, though. She took me twice
+					out of turn. Even that had ceased to matter. And she never came, so why bother? But the
+					machine giggled every time we did it. Loud, up there, back there, all around us, he snickered. It
+					snickered. Most of the time I thought of AM as it, without a soul; but the rest of the time I
+					thought of it as him, in the masculine … the paternal … the patriarchal … for he is a jealous
+					people. Him. It. God as Daddy the Deranged.
+					We left on a Thursday. The machine always kept us up-to-date on the date. The passage of time
+					was important; not to us, sure as hell, but to him … it … AM. Thursday. Thanks.
+					Nimdok and Gorrister carried Ellen for a while, their hands locked to their own and each other's
+					wrists, a seat. Benny and I walked before and after, just to make sure that, if anything happened,
+					it would catch one of us and at least Ellen would be safe. Fat chance, safe. Didn't matter.
+					It was only a hundred miles or so to the ice caverns, and the second day, when we were lying out
+					under the blistering sun-thing he had materialized, he sent down some manna. Tasted like boiled
+					boar urine. We ate it.
+					On the third day we passed through a valley of obsolescence, filled with rusting carcasses of
+					ancient computer banks. AM had been as ruthless with its own life as with ours. It was a mark of
+					his personality: it strove for perfection. Whether it was a matter of killing off unproductive
+					elements in his own world-filling bulk, or perfecting methods for torturing us, AM was as
+					thorough as those who had invented him—now long since gone to dust—could ever have hoped.
+					There was light filtering down from above, and we realized we must be very near the surface.
+					But we didn't try to crawl up to see. There was virtually nothing out there; had been nothing that
+					could be considered anything for over a hundred years. Only the blasted skin of what had once
+					been the home of billions. Now there were only five of us, down here inside, alone with AM.
+					I heard Ellen saying frantically, "No, Benny! Don't, come on, Benny, don't please!"
+					And then I realized I had been hearing Benny murmuring, under his breath, for several minutes.
+					He was saying, "I'm gonna get out, I'm gonna get out …" over and over. His monkey-like face
+					was crumbled up in an expression of beatific delight and sadness, all at the same time. The
+					radiation scars AM had given him during the "festival" were drawn down into a mass of pinkwhite puckerings, and his features seemed to work independently of one another. Perhaps Benny
+					was the luckiest of the five of us: he had gone stark, staring mad many years before.
+					But even though we could call AM any damned thing we liked, could think the foulest thoughts
+					of fused memory banks and corroded base plates, of burnt out circuits and shattered control
+					bubbles, the machine would not tolerate our trying to escape. Benny leaped away from me as I 
+					made a grab for him. He scrambled up the face of a smaller memory cube, tilted on its side and
+					filled with rotted components. He squatted there for a moment, looking like the chimpanzee AM
+					had intended him to resemble.
+					Then he leaped high, caught a trailing beam of pitted and corroded metal, and went up it, handover-hand like an animal, till he was on a girdered ledge, twenty feet above us.
+					"Oh, Ted, Nimdok, please, help him, get him down before—" She cut off. Tears began to stand
+					in her eyes. She moved her hands aimlessly.
+					It was too late. None of us wanted to be near him when whatever was going to happen,
+					happened. And besides, we all saw through her concern. When AM had altered Benny, during
+					the machine's utterly irrational, hysterical phase, it was not merely Benny's face the computer
+					had made like a giant ape's. He was big in the privates; she loved that! She serviced us, as a
+					matter of course, but she loved it from him. Oh Ellen, pedestal Ellen, pristine-pure Ellen; oh
+					Ellen the clean! Scum filth.
+					Gorrister slapped her. She slumped down, staring up at poor loonie Benny, and she cried. It was
+					her big defense, crying. We had gotten used to it seventy-five years earlier. Gorrister kicked her
+					in the side.
+					Then the sound began. It was light, that sound. Half sound and half light, something that began
+					to glow from Benny's eyes, and pulse with growing loudness, dim sonorities that grew more
+					gigantic and brighter as the light/sound increased in tempo. It must have been painful, and the
+					pain must have been increasing with the boldness of the light, the rising volume of the sound, for
+					Benny began to mewl like a wounded animal. At first softly, when the light was dim and the
+					sound was muted, then louder as his shoulders hunched together: his back humped, as though he
+					was trying to get away from it. His hands folded across his chest like a chipmunk's. His head
+					tilted to the side. The sad little monkey-face pinched in anguish. Then he began to howl, as the
+					sound coming from his eyes grew louder. Louder and louder. I slapped the sides of my head with
+					my hands, but I couldn't shut it out, it cut through easily. The pain shivered through my flesh
+					like tinfoil on a tooth.
+					And Benny was suddenly pulled erect. On the girder he stood up, jerked to his feet like a puppet.
+					The light was now pulsing out of his eyes in two great round beams. The sound crawled up and
+					up some incomprehensible scale, and then he fell forward, straight down, and hit the plate-steel
+					floor with a crash. He lay there jerking spastically as the light flowed around and around him
+					and the sound spiraled up out of normal range.
+					Then the light beat its way back inside his head, the sound spiraled down, and he was left lying 
+					there, crying piteously.
+					His eyes were two soft, moist pools of pus-like jelly. AM had blinded him. Gorrister and
+					Nimdok and myself … we turned away. But not before we caught the look of relief on Ellen's
+					warm, concerned face.
+					Sea-green light suffused the cavern where we made camp. AM provided punk and we burned it,
+					sitting huddled around the wan and pathetic fire, telling stories to keep Benny from crying in his
+					permanent night.
+					"What does AM mean?"
+					Gorrister answered him. We had done this sequence a thousand times before, but it was Benny's
+					favorite story. "At first it meant Allied Mastercomputer, and then it meant Adaptive
+					Manipulator, and later on it developed sentience and linked itself up and they called it an
+					Aggressive Menace, but by then it was too late, and finally it called itself AM, emerging
+					intelligence, and what it meant was I am … cogito ergo sum … I think, therefore I am."
+					Benny drooled a little, and snickered.
+					"There was the Chinese AM and the Russian AM and the Yankee AM and—" He stopped.
+					Benny was beating on the floorplates with a large, hard fist. He was not happy. Gorrister had not
+					started at the beginning.
+					Gorrister began again. "The Cold War started and became World War Three and just kept going.
+					It became a big war, a very complex war, so they needed the computers to handle it. They sank
+					the first shafts and began building AM. There was the Chinese AM and the Russian AM and the
+					Yankee AM and everything was fine until they had honeycombed the entire planet, adding on
+					this element and that element. But one day AM woke up and knew who he was, and he linked
+					himself, and he began feeding all the killing data, until everyone was dead, except for the five of
+					us, and AM brought us down here."
+					Benny was smiling sadly. He was also drooling again. Ellen wiped the spittle from the corner of
+					his mouth with the hem of her skirt. Gorrister always tried to tell it a little more succinctly each
+					time, but beyond the bare facts there was nothing to say. None of us knew why AM had saved
+					five people, or why our specific five, or why he spent all his time tormenting us, or even why he
+					had made us virtually immortal …
+					In the darkness, one of the computer banks began humming. The tone was picked up half a mile
+					away down the cavern by another bank. Then one by one, each of the elements began to tune 
+					itself, and there was a faint chittering as thought raced through the machine.
+					The sound grew, and the lights ran across the faces of the consoles like heat lightening. The
+					sound spiraled up till it sounded like a million metallic insects, angry, menacing.
+					"What is it?" Ellen cried. There was terror in her voice. She hadn't become accustomed to it,
+					even now.
+					"It's going to be bad this time," Nimdok said.
+					"He's going to speak," Gorrister said. "I know it."
+					"Let's get the hell out of here!" I said suddenly, getting to my feet.
+					"No, Ted, sit down … what if he's got pits out there, or something else, we can't see, it's too
+					dark." Gorrister said it with resignation.
+					Then we heard … I don't know …
+					Something moving toward us in the darkness. Huge, shambling, hairy, moist, it came toward us.
+					We couldn't even see it, but there was the ponderous impression of bulk, heaving itself toward
+					us. Great weight was coming at us, out of the darkness, and it was more a sense of pressure, of
+					air forcing itself into a limited space, expanding the invisible walls of a sphere. Benny began to
+					whimper. Nimdok's lower lip trembled and he bit it hard, trying to stop it. Ellen slid across the
+					metal floor to Gorrister and huddled into him. There was the smell of matted, wet fur in the
+					cavern. There was the smell of charred wood. There was the smell of dusty velvet. There was the
+					smell of rotting orchids. There was the smell of sour milk. There was the smell of sulphur, of
+					rancid butter, of oil slick, of grease, of chalk dust, of human scalps.
+					AM was keying us. He was tickling us. There was the smell of—
+					I heard myself shriek, and the hinges of my jaws ached. I scuttled across the floor, across the
+					cold metal with its endless lines of rivets, on my hands and knees, the smell gagging me, filling
+					my head with a thunderous pain that sent me away in horror. I fled like a cockroach, across the
+					floor and out into the darkness, that something moving inexorably after me. The others were still
+					back there, gathered around the firelight, laughing … their hysterical choir of insane giggles
+					rising up into the darkness like thick, many-colored wood smoke. I went away, quickly, and hid.
+					How many hours it may have been, how many days or even years, they never told me. Ellen
+					chided me for "sulking," and Nimdok tried to persuade me it had only been a nervous reflex on 
+					their part—the laughing.
+					But I knew it wasn't the relief a soldier feels when the bullet hits the man next to him. I knew it
+					wasn't a reflex. They hated me. They were surely against me, and AM could even sense this
+					hatred, and made it worse for me because of the depth of their hatred. We had been kept alive,
+					rejuvenated, made to remain constantly at the age we had been when AM had brought us below,
+					and they hated me because I was the youngest, and the one AM had affected least of all.
+					I knew. God, how I knew. The bastards, and that dirty bitch Ellen. Benny had been a brilliant
+					theorist, a college professor; now he was little more than a semi-human, semi-simian. He had
+					been handsome, the machine had ruined that. He had been lucid, the machine had driven him
+					mad. He had been gay, and the machine had given him an organ fit for a horse. AM had done a
+					job on Benny. Gorrister had been a worrier. He was a connie, a conscientious objector; he was a
+					peace marcher; he was a planner, a doer, a looker-ahead. AM had turned him into a shouldershrugger, had made him a little dead in his concern. AM had robbed him. Nimdok went off in
+					the darkness by himself for long times. I don't know what it was he did out there, AM never let
+					us know. But whatever it was, Nimdok always came back white, drained of blood, shaken,
+					shaking. AM had hit him hard in a special way, even if we didn't know quite how. And Ellen.
+					That douche bag! AM had left her alone, had made her more of a slut than she had ever been.
+					All her talk of sweetness and light, all her memories of true love, all the lies she wanted us to
+					believe: that she had been a virgin only twice removed before AM grabbed her and brought her
+					down here with us. No, AM had given her pleasure, even if she said it wasn't nice to do.
+					I was the only one still sane and whole. Really!
+					AM had not tampered with my mind. Not at all.
+					I only had to suffer what he visited down on us. All the delusions, all the nightmares, the
+					torments. But those scum, all four of them, they were lined and arrayed against me. If I hadn't
+					had to stand them off all the time, be on my guard against them all the time, I might have found
+					it easier to combat AM.
+					At which point it passed, and I began crying.
+					Oh, Jesus sweet Jesus, if there ever was a Jesus and if there is a God, please please please let us
+					out of here, or kill us. Because at that moment I think I realized completely, so that I was able to
+					verbalize it: AM was intent on keeping us in his belly forever, twisting and torturing us forever.
+					The machine hated us as no sentient creature had ever hated before. And we were helpless. It
+					also became hideously clear: 
+					If there was a sweet Jesus and if there was 
+
+				</div>
+				I decided to remedy the nonsensical words by adjusting the temperatures of the text generator, setting them all to expected tokens.
+				This resulted in real English words. I was happy with the result and even started to convert the story into a screenplay.<br>
+				While undergoing this process I realised that the text was lifted directly from I Have No Mouth and I Must Scream.<br>
+				The characters had become so expected that it was just rewriting the input text.<br><br>
+				Test 3:<br> 
+				Level: Word<br>
+				Epochs: 700<br>
+				Temperature: [1.0, 1.0, 1.0, 1.0]<br>
+				<div style="height:400px;width:1200px;border:1px solid #000000;overflow:auto;">
+				the their their their their their after their their their their their their their their their their their after their their their their their their their their their their their after eight eight eight , , the eight eight eight eight eight eight eight eight eight , , the flight waiting waiting waiting waiting eight waiting waiting waiting - , the the the the of of
+				the the the the the the the the the . see to whirl were dead were the the dead dead from the devotees an their their — , her , religion — — — — metal metal —
+				not
+				she her — at this to her an an above escaped — that ere to to means conception , — — —
+				one one — one
+				one
+				she
+				the live visiting of of the that my that herself euthanasia still rate
+				gave permitted of of of and the his , , of of , of she .
+
+				 set , , , - and and and and and the the northern them was chance were were were were told a were told told her she - to was right were were were she she she she her were were were her her told were only only only . only . . only only she she had intangible and — machine — — — what can machine — — — not not contemplated and i to many the i the i i “ and is the the is i many the the the the , myself the and is found the found an have i to visited , . it
+
+				 . .
+				. . , , , and , the them talked a had a her one had those but
+				. were
+				too too too a had had a her to too too
+
+				 had had , , bed could race he he , , , to of he he he the the the to he he
+				he to for , us , to , to ,
+				, to . only went the not he he . . us ready the the he . he he he the the about it even so the the the guava he he . not not he us . was . could
+				touch the he he he . was he as as as even to some and and and the . he he he us us we the was was was the the he . . only was he he tremendous tremendous for the
+				right and
+
+				 it he . . us we we human the still knew the and he he by not i
+				. was was and ah you had and and and done “ you you “ say say . again no again , you has you you you ” , , ” and and you don “ she you what last . ’
+
+
+				. against
+				.
+
+
+				’
+
+
+
+				 , , , be
+				be multivac been talk . something quietly her together establishment the had the the the the should the of the the the had the the had had had had the had the had in at life god had had concluded
+				. was was the
+				the the the the the
+
+				 the
+
+
+				. .
+				. . . and and , frenzy .
+
+				 the the the them race and race race race to and and felt he to to to to to to to , , to all hurled away that not that that course to to to to to to to that that that that that that that we that that even howling her of of away her of of her away over of the the the the out out out out out out away out out out us us suddenly down suddenly from employed , we from . . . , . had . . been been been has has from from . .
+				. away we hit hit a hit where for where through there the the the the the and and and and with dead her the in drew : in . . the the away back smoothly into into filled hot s s : hot . . with '
+				was . an an it water battering ram
+				the the the all . the the - the the bounded brain the the here ' , up ' the upon the up ten , up the the up upon the
+				up up upon ten ten , the panthers river
+				. ' he heard
+				was
+
+
+
+
+
+				 of … wood
+				fell of from
+				. . . . heard
+				heard
+
+				 was ' the arms down and the was on went it . was away was him was was of touched what what what had alarm down and down were though his were and summoned , buttons were they never and to were ellen seen the to her were bring had had , , , gasping weakened atmosphere of
+				was the car complaint was ) marble button button button the that , , a the travelling the that her the of the of . each too the button was at that that the the button that nothing the switches the the the , , and miles the room the was it was contained contained . nothing nothing switches of were having contained nothing nothing switches and still the flight the the the the had since sent in , for them , , , , and still the flight . had , , still the flight whirl invisible to whirl walls to body body
+				the book heard heard a heard a a a a a that to whirl ' heard . . . that has that that she that the , the the at and the first down had down the the in was the air she down at down ah and and “ and “ “ up and and and again and and and and don and , and and . don
+				his , don , , you , ’ . might destroyed never , , ' i a i a ' , occasionally " ' ' ' , s , , , slowly , ' . s , re " ' s , " s ' ' ' ' ' re shut ll insuficient the . meaningful meaningful
+				" . . meaningful " meaningful as the . jerrodd vj vj was of . thin vj vj asked asked of 23x ac t into and and and and with and with with and and with - to would - -
+				" him galaxies a a are and and , , with not the , a , , with , , with , find , , even . , side each even , consider
+				some it quietly god in in was was in in , and and was in and in in me and and
+				and his a , was
+				ignored and . life god frenzy knew the the the the the the make the knew knew the machine and the the and machine the the and knew every was long , and , hurled away was as as . . . that that made it that that that in as as as that as as as it thought as as as even was ruined seen a
+				a - - - grass air air enough - brilliancy - was filled filled the - filled filled . paternal race filled way the the to miles luckier
+				that one that that that
+
+				 of
+				one , that movement one one that that followed followed mad followed one one one one followed known followed followed vashti of of vashti vashti vashti vashti vashti vashti vashti of of us as so . vashti said continued continued . continued that that that that , by continued she s to to s s s s s s s , but but as as to too as but but , but but but , thought that , but air it “ colourless the the with : : , a each that that tremendous that too , that that tremendous that that that that ) race , ‘ ’ a that that that to , , , to those
+				eight . but but i i but but , , , , . , whole to were thirty establishment the the of of the in possibly mistake of . of the the the the which of right and the the of of each of of had had peroration concluded . . right right ”
+				will silently
+				. . . . . . the
+				will . .
+
+				 . jarring . . . they described
+				directly a we
+				“
+
+
+				have have have to not
+				to you on on on have on of , , of repeat certain numerals out it it ” ” ” “ the the the ? ? it how
+
+				 . “ rain the the ” ” the ” ” the of ringing an ” on on “ ? you you do . ” call
+				. this . ms . . . . . . . . . . . avalanche .
+				we them them we sword . . . , them , , we , between between very “ very very very very know a machine a a and know very know machine very very good . “ he
+				i he can . my . . can
+				i i i i can why out you think . . . i
+				was broke me “ you beneath with with with with with filled with with with with with with ever earth with with to
+				with with earth earth the for she , god talk the ever five five five
+				five ellen studio believe that that her ' you thing her for
+				cried machine tell pleasure cried you that ; tell to for people for the so .
+
+				 . her pleasure . . . the
+				.
+				, .
+
+				 down however
+				something a
+
+				 , button button , , a a , , , to however of , , a , , , a , , humanity central superfluously at . , , “ ” “ , , , , , they they , however superfluously , , , , they they they , they they “ “ “ , ” . - - ” . they they they they , , said “ call “ forgotten , and , , was , in , and and and as was was as ,
+				was , , , , , , , about
+
+				 was getting boiled passed passed the the the the the the we we
+				whole a passed passed passed the the passed passed the on banks banks through chance
+				down through banks thousands thousands walls walls were . we we sloshy , , the the the thousands thousands black the thousands thousands wood to me me were were a from the lungs lungs lungs , , it a the have a " rain today today a lungs . is a him him him at a a a a all . that it opened opened conclusion conclusion time the in time the is the time has has opened there the the ; had ; a of the the the the the of of of of
+
+				</div>
+				The word level generator gave sensical words, but struggled when it came to legibility. The sentences weren’t formed correctly, and there were a lot of repeated words.
+				There were also lots of randomly placed commas. This phenomenon occurred with all of the text files I generated.
+				<br><br>
+				Test 4:<br> 
+				Level: Character<br>
+				Epochs: 700<br>
+				Temperature: [0.1, 0.3, 0.2, 0.2]<br>
+				<div style="height:400px;width:1200px;border:1px solid #000000;overflow:auto;">
+									.
+				vashti ’ s next move was to turn off the isolation switch , and all the accumulations of
+				the last three minutes burst upon her . the room was filled with the noise of bells , and
+				speaking - tubes . what was the new food like ? could she recommend it ? has she had any
+				ideas lately ? might one tell her one ’ s own ideas ? would she make an engagement to visit
+				the public nurseries at an early date ? — say this day month .
+				to most of these questions she replied with irritation — a growing quality in that accelerated age . she said that the new food was horrible . that she could not visit the public
+				nurseries through press of engagements . that she had no ideas of her own but had just
+				been told one - that four stars and three in the middle were like a man : she doubted there
+				was much in it . then she switched off her correspondents , for it was time to deliver her
+				lecture on australian music .
+				the clumsy system of public gatherings had been long since abandoned ; neither vashti
+				nor her audience stirred from their rooms . seated in her armchair she spoke , while they in
+				their armchairs heard her , fairly well , and saw her , fairly well . she opened with a humorous
+				account of music in the pre - mongolian epoch , and went on to describe the great outburst
+				of song that followed the chinese conquest . remote and primæval as were the methods of
+				i - san - so and the brisbane school , she yet felt ( she said ) that study of them might repay the
+				musicians of today : they had freshness ; they had , above all , ideas .
+				her lecture , which lasted ten minutes , was well received , and at its conclusion she and
+				many of her audience listened to a lecture on the sea ; there
+
+				 is no objection to that ; one simply summons a respirator and gets an egression - permit . it
+				is not the kind of thing that spiritually minded people do , and i begged you not to do it , but
+				there is no legal objection to it . ”
+				“ i did not get an egression - permit . ”
+				“ then how did you get out ? ”
+				“ i found out a way of my own . ”
+				the phrase conveyed no meaning to her , and he had to repeat it .
+				“ a way of your own ? ” she whispered . “ but that would be wrong . ”
+				“ why ? ”
+				“ because , any moment , something tremendous many happen . ”
+				“ have you been on the surface of the earth yet ? ”
+				“ not yet . ”
+				“ then what is it ? ”
+				“ i will not tell you through the machine . ”
+				she resumed her life .
+				but she thought of kuno as a baby , his birth , his removal to the public nurseries , her
+				own visit to him there , his visits to her — visits which stopped when the machine had
+				assigned him a room on the other side of the earth , and he could see her .
+				“ kuno , how slow you are . ”
+				he smiled gravely .
+				“ i really believe you enjoy dawdling . ”
+				“ i have called you before , mother , but you were always busy or isolated . i have something particular to say . ”
+				“ what is it ? ”
+				“ i will not tell you through the machine . ”
+				she resumed her life .
+				but she thought of kuno as a baby , his birth , his removal to the public nurseries , her
+				own visit to him there , his visits to her — visits which stopped when the machine had
+				assigned him a room on the other side of the earth , and he could see her .
+				“ kuno , how slow you are . ”
+				he smiled gravely .
+				“ i really believe you enjoy dawdling . ”
+				“ i have called you before , mother , but you were always busy or isolated . i have something particular to say . ”
+				“ what is it , dearest boy ? be quick . why could you not send it by pneumatic post ? ”
+				“ because i prefer saying such a thing . i want — ”
+				“ well ? ”
+				she considered , and chose her words with care . her son had a queer temper , and she
+				wished to dissuade him from the expedition .
+				“ it is contrary to the spirit of the age , ” she asserted .
+				“ do you mean by that , contrary to the machine ? ”
+				“ in a sense , but — ”
+				his image is the blue plate faded .
+				“ kuno ! ”
+				“ i will not talk to you , ” he answered , “ until you come . ”
+				“ have you been on the surface of the earth yet ? ”
+				“ not yet . ”
+				“ then what is it ? ”
+				“ i have forgotten its name . ”
+				“ cover the window , please . these mountains give me no ideas . ”
+				the northern aspect of the himalayas was in deep shadow : on the indian slope the
+				sun had just prevailed . the forests had been destroyed during the literature epoch for
+				the purpose of making newspaper - pulp , but the snows were awakening to their morning
+				glory , and clouds still hung on the breasts of kinchinjunga . in the plain were seen the
+				ruins of cities , with diminished rivers creeping by their walls , and by the sides of these
+				were sometimes the signs of vomitories , marking the cities of to - day . over the whole
+				prospect air - ships rushed , crossing the inter - crossing with incredible aplomb , and rising
+				nonchalantly when they desired to escape the perturbations of the lower atmosphere and to
+				traverse the roof of the world .
+				“ we have indeed advanced , thanks to the machine , ” repeated the attendant , and hid the
+				himalayas behind a metal blind .
+
+				 the day dragged wearily forward . the passengers sat each in his cabin , avoiding one
+				another with an almost physical repulsion and longing to be once more under the surface
+				of the earth . there were eight or ten of them , mostly young males , sent out from the public
+				nurseries to inhabit the rooms of those who had died in various parts of the earth . the man
+				who had dropped his book was on the homeward journey . he had been sent to sumatra for
+				the purpose of propagating the race . vashti alone was travelling by her private will .
+				at midday she took a second glance at the earth . the air - ship was crossing another
+				range of mountains , but she could see little , owing to clouds . masses of black rock hovered
+				below her , and merged indistinctly into grey . their shapes were fantastic ; one of them
+				resembled a prostrate man .
+				“ no ideas here , ” murmured vashti , and hid the caucasus behind a metal blind .
+				in the evening she looked again . they were crossing a golden sea , in which lay many
+				small islands and one peninsula .
+				she repeated , “ no ideas here , ” and hid greece behind a metal blind .
+
+				 the day dragged wearily forward . the passengers sat each in his cabin , avoiding one
+				another with an almost physical repulsion and longing to be once more under the surface
+				of the earth . there were eight or ten of them , mostly young males , sent out from the public
+				nurseries to inhabit the rooms of those who had died in various parts of the earth . the man
+				who had dropped his book was on the homeward journey . he had been sent to sumatra for
+				the purpose of propagating the race . vashti alone was travelling by her private will .
+				at midday she took a second glance at the earth . the air - ship was crossing another
+				range of mountains , but she could see little , owing to clouds . masses of black rock hovered
+				below her , and merged indistinctly into grey . their shapes were fantastic ; one of them
+				resembled a prostrate man .
+				“ no ideas here , ” murmured vashti , and hid the caucasus behind a metal blind .
+				in the evening she looked again . they were crossing a golden sea , in which lay many
+				small islands and one peninsula .
+				she repeated , “ no ideas here , ” and hid greece behind a metal blind .
+
+				 by a vestibule , by a lift , by a tubular railway , by a platform , by a sliding door — by
+				reversing all the steps of her departure did vashti arrive at her son ’ s room , which exactly
+				resembled her own . she might well declare that the visit was superfluous . the buttons , the
+				knobs , the reading - desk with the book , the temperature , the atmosphere , the illumination
+				— all were exactly the same . and if kuno himself , flesh of her flesh , stood close beside
+				her at last , what profit was there in that ? she was too well - bred to shake him by the hand .
+				averting her eyes , she spoke as follows :
+				“ here i am . i have had the most terrible journey and greatly retarded the development
+				of my soul . it is not worth it , kuno , it is not worth it . my time is too precious . the sunlight
+				almost touched me , and i have met with the rudest people . i can only stop a few minutes .
+				say what you want to say , and then i must return . ”
+				“ i have been threatened with homelessness , ” said kuno .
+				she looked at him now .
+				“ i have been threatened with homelessness , ” said kuno .
+				she looked at him now .
+				“ i have been threatened with homelessness , ” said kuno .
+				she looked at him now .
+				“ i have been threatened with homelessness , ” said kuno .
+				she looked at him now .
+				“ i have been threatened with homelessness , ” said kuno .
+				she looked at him now .
+				“ i have been threatened with homelessness , ” said kuno .
+				she looked at him now .
+				“ i have been threatened with homelessness , ” said kuno .
+				she looked
+
+				</div>
+				This final test just generated the text from “The Machine Stops”, and at the end begins to repeat on itself.
+				<a name="Findings"></a>
+				<h2>Findings</h2>
+				In all the models that I tried, none came even close to generating original, sensical text, let alone anything with a coherent plot or original characters.
+				I experimented with different kinds of models and adjusted parameters, but didn’t manage to generate anything remotely similar to what a human could write.
+				While using temperatures of 0.8-1.0, sensical text was generated, but was often lifted directly from the input text.
+				When using lower temperatures, nonsensical words were created.
+				<a name="Analysis"></a>
+				<h2>Analysis</h2>
+				The findings from this experiment can provide insight into the threat of AI against the entertainment industry, particularly in the writing industry.
+				While reading the output text files, it is apparent that text generation machine learning technology is not an immediate problem that will have to be addressed.
+				There are, of course, limitations to the method  I used to test the capabilities of text generation machine learning.
+				Textgenrnn has shortcomings, as outlined by the creator Max Woolf:<br><br>
+				<div style="margin-left:100px; margin-right:100px">
+				"You will not get quality generated text 100% of the time, even with a heavily-trained neural network. That's the primary reason viral blog posts/Twitter tweets utilizing NN text generation often generate lots of texts and curate/edit the best ones afterward.”<br><br>
+				“Results will vary greatly between datasets. Because the pretrained neural network is relatively small, it cannot store as much data as RNNs typically flaunted in blog posts. For best results, use a dataset with at least 2,000-5,000 documents." (Woolf, 2017/2020).<br><br>
+				</div>
+				In order to create a story with particular traits: in this case being 15000 characters long, being about AIs/AI takeovers, being in a science-fiction style of writing, 2000-5000 texts with these traits must be sourced and a model trained on this dataset.<br>
+				This is difficult, if 2000-5000 of these texts even exist at all.<br>
+				An alternative is to create ‘genre models’, which generate stories in a particular genre, such as science-fiction.<br>
+				However, as well as running into the common pitfalls of AI generated text such as legibility, poor structure and nonsensical narratives, even more narrative control is lost.<br>
+				Genres deal with many different sub-genres and various themes and topics which cannot be controlled with trained models.<br>
+				Another way to improve the process is to write text in the style of <a href="https://play.aidungeon.io/main/home" target="_blank">AI Dungeon</a> (Latitude, n.d.), where the user can influence the text generation as it generates, adding prompts, actions, and dialogue to push the narrative where they want it to go.<br>
+				This still requires human input but is a lot more ‘hands-off’.<br><br>
+				Consideration must be made to the chosen method of text generation during the experiments. Textgenrnn was chosen due to its ease of use and accessibility, however is far from the most powerful text generator available.<br>
+				OpenAIs GPT-2 is a powerful model trained on 40GB of text from the internet. It has been used to generate poetry (Piper, 2019), novels (Samuel, 2019) and even <a href="https://twitter.com/JanelleCShane/status/1228358068523716615/photo/1" style="color:blue;"target="_blank">candy heart messages.</a><br>
+				<div style="margin-left:300px;">
+				<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">Here are some candy hearts written by the neural net GPT-2. It&#39;s one of the most powerful text-generating neural nets out there, but I don&#39;t think it really knows what is expected of a candy heart.<a href="https://t.co/tAU6J7biC8">https://t.co/tAU6J7biC8</a> <a href="https://t.co/4QUXsGw4Vn">pic.twitter.com/4QUXsGw4Vn</a></p>&mdash; Janelle Shane (@JanelleCShane) <a href="https://twitter.com/JanelleCShane/status/1228358068523716615?ref_src=twsrc%5Etfw">February 14, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				</div><br>
+				In any regard, the text generated by GPT-2 is still strange. In most cases, it uses unusual words that just don’t feel right – an uncanny-valley of words. How often would you find a candy-heart that just says “ALL HAIL THE CHICKEN”?<br>
+				This makes AI-generated text a poor replacement for human-written text, but entertaining in itself. AI creates text so unusual and random that it becomes humorous, which some people have acted upon, for example the previously-mentioned candy-hearts, the AI-generated Harry Potter excerpt <a href="https://botnik.org/content/harry-potter.html" style="color:blue;"target="_blank">Harry Potter and What Looked Like a Large Pile of Ash</a> (Botnik Studios, 2018), and <a href="https://www.youtube.com/watch?v=Y_NvR5dIaOY" style="color:blue;"target="_blank">I taught an AI to make pasta</a> (Cruz, 2020).<br><br>
+				<a name="Conclusion"></a>
+				<h2>Conclusion</h2>
+				All of this analysis leads to the conclusion that AI is not a threat to the entertainment and writing industries. AI is unable to generate legible text most of the time, and when it does it struggles with narrative consistency, if a narrative exists at all.<br>
+				This makes AI an unfit replacement for human writers. Even if an AI managed to create a story with a coherent plot, it wouldn’t be able to create compelling original characters, as well as unique plots. AI text generation has potential to be entertaining in itself, almost as its own sub-genre, but is unlikely to replace humans in the industry anytime soon.<br>
+				<br>
+			  </p>
+			  <p>
+			  <a name="Bibliography"></a>
+			  <h2>Bibliography</h2>
+				<div style="margin-left:50px;">
+				<br>
+					Asimov, I. (1956). The Last Question.<br><br>
+					Botnik Studios. (2018). Harry Potter and What Looked Like a Large Pile of Ash. https://botnik.org/content/harry-potter.html<br><br>
+					Capek, K., Novack-Jones, C., & Klima, I. (1920). R.U.R. (Rossum’s Universal Robots). Penguin Publishing Group. https://books.google.co.nz/books?id=-P-TiB7CzGkC<br><br>
+					Coll, L. (2020, August 28). The Influence of Sci-Fi AIs on Real Life AIs and AI Media Reporting. https://www.youtube.com/watch?v=373rv4iLo1c&feature=youtu.be<br><br>
+					Cruz, S. (2020, May 27). I taught an AI to make pasta. https://www.youtube.com/watch?v=Y_NvR5dIaOY<br><br>
+					Ellison, Harlan. (1977). I have no mouth and I must scream: Stories. Pyramid Publications; /z-wcorg/.<br><br>
+					Fast, E., & Horvitz, E. (2016). Long-Term Trends in the Public Perception of Artificial Intelligence. https://arxiv.org/pdf/1609.04904.pdf<br><br>
+					Forster, E. M. (1909). The Machine Stops. Lits. https://books.google.co.nz/books?id=siYDkgAACAAJ<br><br>
+					Latitude. (n.d.). AI Dungeon. Retrieved October 19, 2020, from https://play.aidungeon.io/main/home<br><br>
+					Piper, K. (2019, May 15). A poetry-writing AI has just been unveiled. It’s ... Pretty good. Vox. https://www.vox.com/2019/5/15/18623134/openai-language-ai-gpt2-poetry-try-it<br><br>
+					Samuel, S. (2019, August 30). How I’m using AI to write my next novel. Vox. https://www.vox.com/future-perfect/2019/8/30/20840194/ai-art-fiction-writing-language-gpt-2<br><br>
+					Woolf, M. (2020). Minimaxir/textgenrnn [Python]. https://github.com/minimaxir/textgenrnn (Original work published 2017)<br><br>
+					Yang, J. (2014). Patterns of a Murmuration, in Billions of Data Points.<br><br>
+			  </p>
+		</div>
+		<footer class="footer">
+			<div class="content-970 center-relative">			
+				<ul>
+					<li class="copyright-footer">
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</li>
+				</ul>
+			</div>
+		</footer>
+
+
+
+        <!--Load JavaScript-->
+        <script src="js/jquery.js"></script>			                                       
+        <script src='js/jquery.fitvids.js'></script>
+        <script src='js/jquery.smartmenus.min.js'></script>
+        <script src='js/isotope.pkgd.js'></script>
+        <script src='js/imagesloaded.pkgd.js'></script>        
+        <script src='js/isotope.pkgd.js'></script>        
+        <script src='js/jquery.carouFredSel-6.0.0-packed.js'></script>
+        <script src='js/jquery.mousewheel.min.js'></script>
+        <script src='js/jquery.touchSwipe.min.js'></script>
+        <script src='js/jquery.easing.1.3.js'></script>
+        <script src='js/imagesloaded.pkgd.js'></script>
+        <script src='js/jquery.prettyPhoto.js'></script>
+        <script src='js/jquery.nicescroll.min.js'></script>
+        <script src='js/main.js'></script>
+    </body>
+</html>
