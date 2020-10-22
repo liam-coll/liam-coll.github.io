@@ -194,9 +194,9 @@
 					With the tech working to my liking (ahead of schedule as well) , I’m ready to move onto the next section of the project: hardware and media.
 					<br>
 					This will be easier to do once I’m back on city campus so I’ll take the next few days to work on other projects as well as resting up for what will hopefully be an energetic and successful final half-semester.
-
+					<br>
 				</p>
-				<h1 >
+				<h1>
 				  <p>4/10/2020</p>
 				</h1>
 				<p>
@@ -262,8 +262,50 @@
 					I’ll experiment with dimensions and build some mock-ups over the weekend and also work on the design of the box, but I’m hoping to have it built on Monday and work on the electronics on Tuesday/Wednesday, then spend the rest of the time until submission collecting content and working on documentation.
 					<br>
 					This is a hitch, but ultimately is for the best. The buttons were small, and you had to walk up to the TV to use it, not exactly user-friendly, especially if they’re sitting down. I plan on using arcade style buttons which invite the user to press them, mess around, and surf through the channels.
-
+					
 				</p>
+				<br>
+				<h1>
+				  <p>22/10/2020</p>
+				</h1>
+				<p>
+					Over the weekend after the last post I created a mockup of the remote control in the dimensions I specified while making the vector diagram.
+					<br>
+					<img src="images/STUDIOVI/mockremote.jpg">
+					<br>
+					I found the mockup to be too large too hold comfortably while pressing all the buttons, so I reduced the length and the distance between the buttons, and made a new vector diagram.
+					<br>
+					On Monday I headed to the 3D labs to get the MDF laser-cut. We cut it once, and noted that the tolerance of the tooth joints was too low making the box very loose. I cut it again with a different tolerance and the box slotted together without falling apart.
+					<br>
+					I headed back to studio and put the arcade buttons into the holes with some minor cuts.
+					<br>
+					<img src="images/STUDIOVI/remote.jpg">
+					<br>
+					As I was working on putting the buttons in, I was talking to our TA Claudine about how I would connect the remote to the TV. She asked if I was going to use Infrared signals to control the chennels etc. I had initially rejected the idea as I was under the impression that the software I was using didn’t support IR recievers. However, on the bus home I devised a method to send and receive IR signals and then just put a voltage into the RPi GPIO pins, just like closing a switch. The setup would require two Arduinos, which I had, and an IR blaster/receiver setup which I had used for a previous project.
+					<br>
+					I drew up a circuit diagram on the bus on Wednesday. 
+					<br>
+					<img src="images/STUDIOVI/notebook22-10.jpg">
+					<br>
+					I spent the next two days putting everything together and actually even managed to hack the pre-existing IR receiver on the TV., as well as drilling holes into the TV casing so I could mount the RPi and Arduino.
+					<br>
+					I now had a setup which directly incorporated parts from the TV, and also had tactile, labelled buttons which were easy to use and had an obvious function. The traditional act of controlling the TV with a remote also adds to the experience. I consider this method of control to be the ‘silver bullet’ solution, and it only came into existence through iteration and tinkering with ideas, failing and problem-solving.
+					<br>
+					The setup as is follows:
+					<br>
+					-	Button is pressed, sends signal to Arduino in the remote.
+					<br>
+					-	Arduino sends corresponding IR signal to the IR receiver in the TV.
+					<br>
+					-	Reciever sends IR signal to Arduino on the TV, which decodes it and sends a signal to the corresponding GPIO pin on the RPi, which controls the PiPresents software.
+					<br><br>
+					I then spent a day mounting everything on the back of the TV properly, including a multiboard so I can turn everything on and off with one switch. This also makes the installation more safe as there are less cables lying around causing trip hazards.
+					<br>
+					I am now finished with the physical part of the installation and am now going to work on what my project is fundamentally about, finding old media and re-exposing it. I'm combing through online archives and having conversations with my peers about what they do and don’t remember from NZ TV. Im finding some interesting stuff, like Santa Claus arriving at the 1985 Santa Parade via helicopter.
+					<br>
+					<iframe width="100%" height="650" style="width: 100%" src="https://www.nzonscreen.com/embed/d586d18445a89d0a" frameborder="0" allowfullscreen ></iframe>
+				</p>
+				<br>
 			<!--
 				<h1>
 				  <p>&ltinsert date here&gt</p>
