@@ -42,22 +42,12 @@
               <h1 >
 					EntertAInment: An Experiment With Machine Learning and It's Ability to Write Cohesive and Original Short Stories/Films, and It's Effect on the Entertainment Industry 
 			  </h1>
-			  <h2>
-				  <br>
-				  <a href="#Intro">Introduction</a><br>
-				  <a href="#Experiment">The Experiment</a><br>
-				  <a href="#tests">The Tests</a><br>
-				  <a href="#Findings">Findings</a><br>
-				  <a href="#Analysis">Analysis</a><br>
-				  <a href="#Conclusion">Conclusion</a><br>
-				  <a href="#Bibliography">Bibliography</a><br>
-			  </h2>
 			  <p>
 				<a name="Intro"></a>
 				<h2>Introduction</h2>	
 				Artificial Intelligence technologies are commonly treated with great deals of fear and concern when they are reported on in the news, and when they appear in films and television.<br>
 				These fears mostly consist of either AIs becoming self-aware, or AIs automating so much of human society that there will be no more jobs left for humans. (Fast & Horvitz, 2016).<br>
-				Many of these fears are created, ironically, from science fiction stories and create unrealistic perspectives on AI (you can see a video essay I created on this very topic <a style="color:blue;"; href="https://youtu.be/373rv4iLo1c" target="_blank">here</a> (Coll, 2020)).<br>
+				Many of these fears are created, ironically, from science fiction stories and create unrealistic perspectives on AI (you can see a video essay I created on this very topic <a style="color:blue;" href="https://youtu.be/373rv4iLo1c" target="_blank">here</a> (Coll, 2020)).<br>
 				I decided to investigate AI science fiction, and conduct a meta-experiment:<br><br>
 				<ul>
 				<li>- Can an AI write a short story akin to the ones that contributed so much to its own historical development and treatment?</li>
@@ -66,7 +56,7 @@
 				</ul>
 				<a name="Experiment"></a>
 				<h2>The Experiment</h2>
-				In order to conduct this experiment, I took five short stories about Artificial Intelligence from different periods of time, and ran them through TextGenRNN, a Python module created by Max Woolf ADDLINK MAX WOOLF.<br>
+				In order to conduct this experiment, I took five short stories about Artificial Intelligence from different periods of time, and ran them through TextGenRNN, a Python module created by <a style="color:blue;" href="https://github.com/minimaxir/textgenrnn" target="_blank">Max Woolf</a><br>
 				The scripts that Max had written were on Google Colaboratory, a service that allows you to run Python scripts in a browser, with access to Google GPUs.<br>
 				Basically, I was able to run text-generation machine learning quickly, in just my browser.<br>
 				Max’s scripts allow you to input text, tweak a few variables and train text-generation models.<br>
@@ -696,6 +686,8 @@
 				Another way to improve the process is to write text in the style of <a href="https://play.aidungeon.io/main/home" target="_blank">AI Dungeon</a> (Latitude, n.d.), where the user can influence the text generation as it generates, adding prompts, actions, and dialogue to push the narrative where they want it to go.<br>
 				This still requires human input but is a lot more ‘hands-off’.<br><br>
 				Consideration must be made to the chosen method of text generation during the experiments. Textgenrnn was chosen due to its ease of use and accessibility, however is far from the most powerful text generator available.<br>
+				Weaknesses in Textgenrnn lie in the fact that it is a “model free” text generator. It doesn’t understand what a word is, what a word consists of, and how it should be combined with other words to create a sensical output.<br>
+				Legibility can be increased by using model-based text generation, and using a lexical English database such as WordNet (Jing, 1998).<br>
 				OpenAIs GPT-2 is a powerful model trained on 40GB of text from the internet. It has been used to generate poetry (Piper, 2019), novels (Samuel, 2019) and even <a href="https://twitter.com/JanelleCShane/status/1228358068523716615/photo/1" style="color:blue;"target="_blank">candy heart messages.</a><br>
 				<div style="margin:auto;">
 				<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">Here are some candy hearts written by the neural net GPT-2. It&#39;s one of the most powerful text-generating neural nets out there, but I don&#39;t think it really knows what is expected of a candy heart.<a href="https://t.co/tAU6J7biC8">https://t.co/tAU6J7biC8</a> <a href="https://t.co/4QUXsGw4Vn">pic.twitter.com/4QUXsGw4Vn</a></p>&mdash; Janelle Shane (@JanelleCShane) <a href="https://twitter.com/JanelleCShane/status/1228358068523716615?ref_src=twsrc%5Etfw">February 14, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -717,6 +709,7 @@
 					Cruz, S. (2020, May 27). I taught an AI to make pasta. https://www.youtube.com/ watch?v=Y_NvR5dIaOY<br><br>
 					Ellison, Harlan. (1977). I have no mouth and I must scream: Stories. Pyramid Publications; /z-wcorg/.<br><br>
 					Fast, E., & Horvitz, E. (2016). Long-Term Trends in the Public Perception of Artificial Intelligence. https://arxiv.org /pdf/1609.04904.pdf<br><br>
+					Jing, H. (1998). Usage of WordNet in Natural Language Generation. 7.<br><br>
 					Forster, E. M. (1909). The Machine Stops. Lits. https://books.google.co.nz/book s?id=siYDkgAACAAJ<br><br>
 					Latitude. (n.d.). AI Dungeon. Retrieved October 19, 2020, from https://play.aidungeon.io/ main/home<br><br>
 					Piper, K. (2019, May 15). A poetry-writing AI has just been unveiled. It’s ... Pretty good. Vox. https://www.vox.com/2019/5/ 15/18623134/openai-language-ai-gpt2-poetry-try-it<br><br>
